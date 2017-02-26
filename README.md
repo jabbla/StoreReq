@@ -1,6 +1,5 @@
 # SR-Crawler.js
-
----
+还在测试阶段哦，大家多提issues哦
 # 基本使用
 ## 安装npm模块
 ```bash
@@ -52,7 +51,9 @@ var req = new Request(config);
 ```
 发送这个请求
 ```js
-var p = req.request();    //返回请求的Promise对象
+var p = req.request();          //返回请求的Promise对象
+p.then(function(htmlText){});   //then中返回网页文本
+p.catch(function(error){});     //catch中返回错误
 ```
 配置对象(标准模式)
 ```js
