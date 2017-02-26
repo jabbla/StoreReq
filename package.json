@@ -1,10 +1,31 @@
 {
+  "name": "node-sr-crawler",
+  "version": "1.0.0",
+  "description": "node.js crawler",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jabbla/StoreReq.git"
+  },
+  "keywords": [
+    "node.js",
+    "crawler"
+  ],
+  "author": "zxr",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jabbla/StoreReq/issues"
+  },
+  "homepage": "https://github.com/jabbla/StoreReq#readme",
   "dependencies": {
     "bufferhelper": "^0.2.1",
     "iconv-lite": "^0.4.15",
     "promise": "^7.1.1"
-  },
-  "devDependencies": {
-    "webpack": "^2.2.1"
   }
 }
