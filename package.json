@@ -26,6 +26,7 @@
   "dependencies": {
     "bufferhelper": "^0.2.1",
     "iconv-lite": "^0.4.15",
+    "node-sr-crawler": "^1.0.0",
     "promise": "^7.1.1"
   }
 }
