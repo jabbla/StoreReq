@@ -1,6 +1,6 @@
 'use strict';
 
-let ent = require('node-sr-crawler');
+let ent = require('../index.js');
 let Store = ent.Store,
 	Request = ent.Request;
 
