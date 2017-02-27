@@ -20,6 +20,7 @@ var s1 = new Store(config);
 ```js
 var requset = new Request(requsetConfig);
 var p = s1.queue(requset);  //返回请求的promise实例
+s1.startRequest();  //仓库开始发出请求
 ```
 
 
@@ -78,12 +79,22 @@ var p = store.queue(req);   //返回入库请求的Promise对象
 配置对象(标准模式)
 ```js
 {
+    name: 'store1', //请求仓库的名字，可以通过config.name调用
     sendRate: 2000, //请求的发送间隔(ms)，默认2000
     retry: 0,       //仓库中请求的重试次数，默认0
     retryTimeout: 0, //仓库中请求的超时判定依据(ms),默认0
     pageMode: false //是否开启分页模式，默认false
 }
 ```
+## 组合的仓库(Store.combine)
+> 在一些需求场景下你可能需要多个仓库的请求串行运行
+> 比如分页爬取一个网站的多个类别，此时若依然采用仓库并行机制很有可能被封锁IP
+
+```js
+var result = Store.combine([store1,store2,store3]); //返回Promise对象
+使用Store.combine后会自动从store1开始运行，直到store3达到complete状态
+```
+
 ## 分页模式
 > 一个分页模式的应用必须是双向的，也就是说，仓库和请求必须同时开启该请求才会开启分页模式，如想使用分页模式仓库必须开启pageMode，仓库中的请求可以选择性地开启
 
