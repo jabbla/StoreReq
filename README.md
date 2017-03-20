@@ -116,6 +116,26 @@ var result = Store.combine([store1,store2,store3]); //返回Promise对象
 }
 ```
 
+## 重试机制
+自身重试
+> 在请求配置项中指定``retryMode：0``
+根据请求配置项中的retry，retryTimeout，自动重新发送请求，与仓库队列无关。
+
+```js
+{
+    retryMode: 0, //0为自身重试，1为仓库重试，默认为0
+    retry：0，//0为默认值，即重试次数
+    retryTimeout：3000,//默认3s，超时时间
+}
+```
+
+仓库重试
+> 在请求配置项中指定``retryMode：1``
+忽略retryTimeout配置项，会将请求放在仓库琴秋队列的队尾。
+
+```js
+    retryMode: 1
+```
 
 
 
