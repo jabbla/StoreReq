@@ -30,7 +30,7 @@ s1.startRequest();  //仓库开始发出请求
 
 ```js
 s1.on('request',function(request){
-//request 实例
+//store 实例
 })
 ```
 
